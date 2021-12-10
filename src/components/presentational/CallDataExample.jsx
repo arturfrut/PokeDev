@@ -25,13 +25,13 @@ export const CallDataExample = () => {
             <i className={pokeTypes.fire}></i>
             <i className={pokeTypes.water}></i>
             <i className={pokeTypes.electric}></i>
-            <i className={pokeTypes.earth}></i>
-            <i className={pokeTypes.leaf}></i>
+            <i className={pokeTypes.ground}></i>
+            <i className={pokeTypes.grass}></i>
             <i className={pokeTypes.ghost}></i>
             <i className={pokeTypes.fly}></i>
             <i className={pokeTypes.bug}></i>
-            <i className={pokeTypes.stone}></i>
-            <i className={pokeTypes.fight}></i>
+            <i className={pokeTypes.normal}></i>
+            <i className={pokeTypes.fighting}></i>
             <i className={pokeTypes.steel}></i>
             <i className={pokeTypes.dragon}></i>
             <i className={pokeTypes.poison}></i>

@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 //inicializador pokemon
 import pokemonInit from '../../initializerJSON/pokemonInitJSON';
 //style
+import pokeTypes from '../../presentational/visualData/pokeTypes';
+//icon types
+import '../../../styles/components/pokeTypes.css'
+//style icon types
 
 import "../../../styles/components/CardPokemon.css"
 function CardPokemon({ name, url }) {
@@ -22,6 +26,16 @@ function CardPokemon({ name, url }) {
         const dataJSON = await data.json();
         setPokemon(dataJSON);
     }
+
+    const sincronizarPokemonIcono = () =>{     //falta desarrollar
+        let iconoPoke;
+        for (const property in pokeTypes) {
+          if(pokemon.types[0].type.name  == property){
+            iconoPoke = property;
+          }
+        }
+        
+    }
     return (
       <Link to={"/pokemon/" + id}>
         <div className="contenedor1">
@@ -33,7 +47,7 @@ function CardPokemon({ name, url }) {
                 <span className="MyPokemonScreenHeader__blink">[</span> {name}{" "}
                 <span className="MyPokemonScreenHeader__blink">]</span>
               </h3>
-              <p>Tipo: {pokemon.types[0].type.name}</p>
+              <p>Tipo: {pokemon.types[0].type.name} <i className={pokeTypes.fire}></i></p>
             </div>
           </div>
         </div>

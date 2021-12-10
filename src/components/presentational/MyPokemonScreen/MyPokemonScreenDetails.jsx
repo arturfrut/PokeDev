@@ -10,7 +10,7 @@ export const MyPokemonScreenDetails = () => {
         
             <div className = 'MyPokemonScreenDetails__types'>
                 {/* ACA DEBERIA IR UN MAP CON LOS TIPOS DEL POKEMON */}
-                <p><i className = {pokeTypes.fire}></i> &nbsp; &nbsp; <i className = {pokeTypes.leaf}></i></p>
+                <p><i className = {pokeTypes.fire}></i> &nbsp; &nbsp; <i className = {pokeTypes.grass}></i></p>
             </div>
         </section>
     )
