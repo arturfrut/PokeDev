@@ -14,6 +14,7 @@ export const EditUserFromix = ({ user, setEditarUsuario}) => {
 
         let body={...v,email:user.email}
        /*  alert(JSON.stringify(body)); */
+       localStorage.setItem('user', v.name);
         axios.put('http://localhost:4000/user/cambiar/', body)
             .then(function (response) {
             })

@@ -5,7 +5,7 @@ export const Footer = () => {
         <footer className='footer' >
             <div>
                 <p>PokeDev</p>
-                <p>An app made it with <i className="fas fa-heart"> </i> By :</p>
+                <p>An app made with <i className="fas fa-heart"> </i> By :</p>
             </div>
             <div>
                 <a href="https://www.linkedin.com/in/facundo-perez-agustin"> <i className="fab fa-linkedin"></i>&nbsp; Facundo Perez</a>

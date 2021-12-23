@@ -46,7 +46,7 @@ export const UsuarioScreen = () => {
 
     return (
         <>
-            <Nav />
+            <Nav cambiar = {editarUsuario} />
             {spinner === true && spinnerOn()}
             {spinner === false && <div className='UsuarioScreen'>
                 {editarUsuario === false && <>

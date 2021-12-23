@@ -36,7 +36,7 @@ export const Nav_burger = () => {
                     <Link to="/moves" className="nav_principal__a">Moves</Link>
                     <Link to="/users" className="nav_principal__a">Users</Link>
                     <Link to= {storage.route} className="nav_principal__a">{storage.name} asldkjasd</Link>
-                    <Link to="/" className="nav_principal__a">Sign off</Link>
+                    <Link to="/" className="nav_principal__a">Log out</Link>
                 </Menu>
             </ul>
         </nav>

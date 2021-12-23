@@ -28,8 +28,9 @@ export const LoginScreen = () => {
                 setLogin(response.data)
                 if(response.data.token===false){
                     Swal.fire(
-                        'Invalid Pass',
+                        'Wrong Password',
 
+                        '',
                         'error',
                         
                       )

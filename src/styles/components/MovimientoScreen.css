@@ -50,6 +50,11 @@
     }
 }
 
+.MovimientoScreen__Edit{
+    min-width:290px;
+    width:70%;
+}
+
 @media (min-width: 950px) {
     .MovimientoScreen__ul {
         width: 90%;

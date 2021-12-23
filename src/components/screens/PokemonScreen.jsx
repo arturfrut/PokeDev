@@ -3,8 +3,6 @@ import { useParams } from 'react-router';
 import axios from 'axios';
 //components
 import AboutPokemon from '../presentational/PokemonScreen/AboutPokemon';
-//import PruebaModificarPokemon from '../presentational/PokemonScreen/PruebaModificarPokemon';
-/* import PruebaMovimientos from '../presentational/PokemonScreen/PruebaMovimientos'; */
 //context
 import PokemonContext from "../context/PokemonContext";
 //initPokemon
@@ -17,8 +15,7 @@ import EditPokemon from '../presentational/PokemonScreen/EditPokemon';
 import Nav from '../nav/nav_principal';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
-// import { MyFormulario } from '../presentational/MyPokemonScreen/pruebaFormulario';
-// import AddMoveFormula from '../presentational/PokemonScreen/AddMoveForm';
+
 
 
 
@@ -39,7 +36,6 @@ export const PokemonScreen = () => {
 
 
     const obtenerPokemon = async (id) => {
-        /* const data = await fetch('https://pokeapi.co/api/v2/pokemon/' + id) */
         const data = await fetch('http://localhost:4000/pokemonOne/' + id)
         const dataJSON = await data.json();
         setPokemon(dataJSON);
@@ -61,7 +57,7 @@ export const PokemonScreen = () => {
                 confirmButtonText: 'Recruit',
                 denyButtonText: `Don't recruit`,
               }).then((result) => {
-                /* Read more about isConfirmed, isDenied below */
+
                 if (result.isConfirmed) {
                   Swal.fire(`${pokemon.name} is recruited!`, '', 'success')
                   navigate('/users/'+storage.idUser)
@@ -82,14 +78,13 @@ export const PokemonScreen = () => {
             idUser:idUser
         })
 
-        window.scrollTo(0, 0)  //Para volver al inicio de la pagina cuando hacen click
+        window.scrollTo(0, 0) 
 
         async function obtenerDescription() {
             let i = 0;
 
             let leng = evolucionesNameArray.length;
             for (; i < leng; i++) {
-                /*  let data = await fetch('https://pokeapi.co/api/v2/pokemon-species/' + evolucionesIdArray[i]) */
                 let data = await fetch('http://localhost:4000/specieOne/' + evolucionesIdArray[i]);
                 let dataJSON = await data.json();
                 if (dataJSON.flavor_text_entries[0].flavor_text) {
@@ -101,7 +96,6 @@ export const PokemonScreen = () => {
                 id: evolucionesIdArray,
                 description: descriptionArray
             });
-
         }
 
         async function obtenerNameEvolutionPokemon(id) {
@@ -114,7 +108,7 @@ export const PokemonScreen = () => {
                 if (arrayURL[6]) {
                     idEvo = arrayURL[6];
                 }
-                /* data = await fetch(dataJSON.evolution_chain.url) */
+
                 let data = await fetch('http://localhost:4000/evolvesOne/' + idEvo)
                 dataJSON = await data.json();
                 if (dataJSON.chain) {
@@ -165,15 +159,6 @@ export const PokemonScreen = () => {
                         <AboutPokemon species={species} />
                         <StatsPokemon />
                         <MoviEvoPokemon evoluciones={evoluciones} species={species} setPokemon={setPokemon} />
-                        {/* <MyFormulario />   */}
-                        {/* <AddMoveFormula setPokemon={setPokemon} /> */}
-                        {/* <PruebaModificarPokemon setPokemon={setPokemon}/> */}
-
-
-                        {/* <PruebaMovimientos  setPokemon={setPokemon}/> */}
-                        {/* <HeaderPokemon />
-            <AtaquesPokemon />
-            <EnergiaPokemon /> */}
                         <button className='btn btn-form' onClick={() => setEditarPokemon(true)} >Edit Pokemon</button>
                         <button className='btn btn-form' onClick={() => Contratar()} >Pokemon Recruit</button>
                     </PokemonContext.Provider>

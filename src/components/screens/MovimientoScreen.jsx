@@ -98,7 +98,7 @@ export const MovimientoScreen = () => {
                         </div>
                     </>}
                     {editMoves === true && <>
-                <div className="MovimientosAllScreen__AddMoveAll">
+                        <div className="MovimientoScreen__Edit">
                     <EditMove move={move} setMove={setMove} id={id} setEditMoves={setEditMoves}  />
                     <button className="btn btn-form" type="submit" onClick={() => { setEditMoves(false) }}>Back</button>
                 </div>
